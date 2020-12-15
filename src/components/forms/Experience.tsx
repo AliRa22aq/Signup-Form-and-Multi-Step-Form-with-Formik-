@@ -1,6 +1,6 @@
 import React from 'react';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
-import {experienceSchema} from './schemas'
+import {experienceSchema} from '../schemas'
 
 export const Experience: React.FC<any> = ({submit, setData, data}) => {
     console.log(data)

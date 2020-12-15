@@ -5,10 +5,10 @@ import Step from '@material-ui/core/Step';
 import StepLabel from '@material-ui/core/StepLabel';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import {Names} from './Names';
-import {Address} from './Address';
-import {Experience} from './Experience';
-import {Submission} from './Submission';
+import {Names} from './forms/Names';
+import {Address} from './forms/Address';
+import {Experience} from './forms/Experience';
+import {Submission} from './forms/Submission';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -51,15 +51,6 @@ export default function StepComponent() {
   const steps = getSteps();
   const [data, setData] = React.useState({})
   console.log(data)
-
-
-  const handleNext = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep + 1);
-  };
-
-  const handleBack = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep - 1);
-  };
 
   const handleReset = () => {
     setActiveStep(0);

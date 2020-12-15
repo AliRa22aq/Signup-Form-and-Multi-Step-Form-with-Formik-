@@ -1,6 +1,6 @@
 import * as Yup from 'yup';
 
-export const namesSchema = Yup.object({
+export const namesSchema = Yup.object().shape({
                     firstName: Yup.string()
                         .max(15, 'Must be 15 characters or less')
                         .min(3, 'Must be 3 characters or more')
@@ -11,6 +11,7 @@ export const namesSchema = Yup.object({
                         .required('Last Name Required'),
                     email: Yup.string().email()
                         .required('Email Required'),
+                    gender: Yup.string().required("Gender required")
     })
 
 export const addressSchema = Yup.object({
