@@ -4,6 +4,8 @@ import {namesSchema} from '../schemas'
 import FormFields from "../fields/FormFields";
 import { Button, FormControl, InputLabel, FormHelperText } from '@material-ui/core';
 import Select from '@material-ui/core/Select';
+import Checkbox from '@material-ui/core/Checkbox';
+
 
 export const Names: React.FC<any>  = ({submit, setData, data}) => {
 
@@ -23,6 +25,28 @@ export const Names: React.FC<any>  = ({submit, setData, data}) => {
     {(formik: FormikProps<any>)=> (
 
             <Form>
+
+            <Field type="checkbox" value = "Mr." name="status" /> 
+            <Field type="checkbox" value = "Ms." name="status" /> 
+            <Field type="checkbox" value = "ssdf" name="status" /> 
+
+            <div> 
+            <label>
+             <Field type="checkbox" name="jobType" value="designer" />
+             Designer
+           </label>
+           <label>
+             <Field type="checkbox" name="jobType" value="developer" />
+             Developer
+           </label>
+           <label>
+             <Field type="checkbox" name="jobType" value="product" />
+             Product Manager
+           </label>
+            </div>
+
+
+
             <FormFields name="firstName" label="First Name" />
             <FormFields name="lastName" label="Last Name" />
             <FormFields name="email" label="Email" />
@@ -45,7 +69,8 @@ export const Names: React.FC<any>  = ({submit, setData, data}) => {
                 <option value="Female">Female</option>
                 <option value="None">Not Sure</option>
               </Field>
-              <ErrorMessage name='gender'/>
+              <FormHelperText><ErrorMessage name='gender'/></FormHelperText>
+
               </FormControl>
 
             <br />
