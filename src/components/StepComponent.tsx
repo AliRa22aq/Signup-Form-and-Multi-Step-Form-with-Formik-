@@ -3,12 +3,12 @@ import { makeStyles } from '@material-ui/core/styles';
 import Stepper from '@material-ui/core/Stepper';
 import Step from '@material-ui/core/Step';
 import StepLabel from '@material-ui/core/StepLabel';
-import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import {Names} from './forms/Names';
 import {Address} from './forms/Address';
-import {Experience} from './forms/Experience';
-import {Submission} from './forms/Submission';
+import {Confirm} from './forms/Confirm';
+import {Submitted} from './forms/Submitted';
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function getSteps() {
-  return ['Personal', 'Address', 'Experience', "Submitted"];
+  return ['Personal', 'Address', "Confirm", "Submitted"];
 }
 
 
@@ -35,9 +35,9 @@ function getStepContent(stepIndex:any, setActiveStep:any, data:any, setData:any)
     case 1:
       return <div> <Address submit={setActiveStep} setData = {setData} data={data}/>  </div>
     case 2:
-      return <div> <Experience submit={setActiveStep} setData = {setData} data={data}/>  </div>
+      return <div> <Confirm submit={setActiveStep} setData = {setData} data={data}/>  </div>
     case 3:
-      return <div> <Submission submit={setActiveStep} data={data}/>  </div>
+      return <div> <Submitted submit={setActiveStep}/>  </div>
     default:
       return 'Unknown stepIndex';
   }
@@ -52,9 +52,6 @@ export default function StepComponent() {
   const [data, setData] = React.useState({})
   console.log(data)
 
-  const handleReset = () => {
-    setActiveStep(0);
-  };
 
   return (
     <div className={classes.root}>
@@ -66,18 +63,11 @@ export default function StepComponent() {
         ))}
       </Stepper>
       <div>
-        {activeStep === steps.length ? (
-          <div>
-            <Typography className={classes.instructions}>All steps completed</Typography>
-            <Button onClick={handleReset}>Reset</Button>
-          </div>
-        ) : (
-          <div>
+        
             <Typography className={classes.instructions}>
               {getStepContent(activeStep, setActiveStep, data, setData)}
               </Typography>
-          </div>
-        )}
+        
       </div>
     </div>
   );

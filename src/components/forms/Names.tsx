@@ -5,6 +5,9 @@ import FormFields from "../fields/FormFields";
 import { Button, FormControl, InputLabel, FormHelperText } from '@material-ui/core';
 import Select from '@material-ui/core/Select';
 import Checkbox from '@material-ui/core/Checkbox';
+import SelectFields from '../fields/SelectField';
+import {TextField} from '@material-ui/core'
+
 
 
 export const Names: React.FC<any>  = ({submit, setData, data}) => {
@@ -26,55 +29,13 @@ export const Names: React.FC<any>  = ({submit, setData, data}) => {
 
             <Form>
 
-            <Field type="checkbox" value = "Mr." name="status" /> 
-            <Field type="checkbox" value = "Ms." name="status" /> 
-            <Field type="checkbox" value = "ssdf" name="status" /> 
-
-            <div> 
-            <label>
-             <Field type="checkbox" name="jobType" value="designer" />
-             Designer
-           </label>
-           <label>
-             <Field type="checkbox" name="jobType" value="developer" />
-             Developer
-           </label>
-           <label>
-             <Field type="checkbox" name="jobType" value="product" />
-             Product Manager
-           </label>
-            </div>
-
-
-
-            <FormFields name="firstName" label="First Name" />
-            <FormFields name="lastName" label="Last Name" />
-            <FormFields name="email" label="Email" />
-
-            <br />
-
-            <FormControl variant="outlined">
-              <InputLabel htmlFor="outlined-gender-native-simple">Gender</InputLabel>
-              <Field
-                as={Select}
-                name='gender'
-                native
-                variant="outlined"
-                label="gender"
-                id='outlined-gender-native-simple'
-                autoWidth
-              >
-                <option aria-label="None" value="" />
-                <option value="Male">Male</option>
-                <option value="Female">Female</option>
-                <option value="None">Not Sure</option>
-              </Field>
-              <FormHelperText><ErrorMessage name='gender'/></FormHelperText>
-
-              </FormControl>
-
-            <br />
-            <br />
+            <SelectFields name="title " label="Title" options = {["Mr.", "Ms.", "Dr.", "Engr"]} /> <br />
+            <FormFields name="firstName" label="Enter your first name" /> <br />
+            <FormFields name="lastName" label="Enter your last name" /><br />
+            <SelectFields name="gender" label="Gender" options = {["Male", "Female", "Not Sure"]} /><br />
+            <FormFields name="email" label="Enter your Email Address" type="email" /> <br />
+            <FormFields name="password" label="Enter Password" type="password" /> <br />
+            <FormFields name="confirmedPassword" label="Enter Confirmed Password" type="password" /> <br />
 
             <Button type="submit" variant="contained" color="primary">Next</Button>
   
@@ -83,6 +44,8 @@ export const Names: React.FC<any>  = ({submit, setData, data}) => {
 
 
       </Formik>
+      <br />
+      <br />
       </div>
 
   );
