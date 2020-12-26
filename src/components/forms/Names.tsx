@@ -1,11 +1,9 @@
 import React from 'react';
-import { Formik, Field, Form, FormikProps, ErrorMessage } from 'formik';
+import { Formik, Form } from 'formik';
 import {namesSchema} from '../schemas'
 import FormFields from "../fields/FormFields";
 import { Button } from '@material-ui/core';
 import SelectFields from '../fields/SelectField';
-
-
 
 export const Names: React.FC<any>  = ({submit, setData, data}) => {
 
