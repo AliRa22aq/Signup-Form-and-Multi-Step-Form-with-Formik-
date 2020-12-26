@@ -25,8 +25,8 @@ export const Names: React.FC<any>  = ({submit, setData, data}) => {
             <FormFields name="lastName" label="Enter your last name" /><br />
             <SelectFields name="gender" label="Gender" options = {["Male", "Female", "Not Sure"]} /><br />
             <FormFields name="email" label="Enter your Email Address" type="email" /> <br />
-            <FormFields name="password" label="Enter Password" type="password" /> <br />
-            <FormFields name="confirmedPassword" label="Enter Confirmed Password" type="password" /> <br />
+            <FormFields name="password" label="Password" type="password" /> <br />
+            <FormFields name="confirmedPassword" label="Confirmed Password" type="password" /> <br />
 
             <Button type="submit" variant="contained" color="primary">Next</Button>
   
