@@ -14,7 +14,6 @@ export const Confirm: React.FC<any>  = ({ submit, setData, data }) => {
         initialValues={data}
         validationSchema={confirmSchema}
         onSubmit={(values) => {
-            console.log(values.confirm)
                 submit(3)
                 setData({...values, ...data})
             

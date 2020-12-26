@@ -20,7 +20,6 @@ export const Names: React.FC<any>  = ({submit, setData, data}) => {
       validationSchema={namesSchema}
       onSubmit={(values) => {
         submit(1)
-        console.log(values)
         setData({...values, ...data})
       }}
     > 

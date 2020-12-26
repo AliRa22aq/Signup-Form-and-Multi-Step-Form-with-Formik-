@@ -15,7 +15,6 @@ export const Address: React.FC<any> = ({submit, setData, data}) => {
     validationSchema={addressSchema}
     onSubmit={(values) => {
       submit(2)
-      console.log(values)
       setData({...values, ...data})
     }}
     >
