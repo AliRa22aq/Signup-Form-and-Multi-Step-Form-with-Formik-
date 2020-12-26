@@ -1,5 +1,5 @@
 import React from 'react';
-import { Formik, Field, Form, ErrorMessage, FormikProps} from 'formik';
+import { Formik, Field, Form, FormikProps} from 'formik';
 import {confirmSchema} from '../schemas';
 import { Button, Checkbox } from '@material-ui/core';
 

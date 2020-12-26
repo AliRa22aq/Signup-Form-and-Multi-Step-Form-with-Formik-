@@ -2,11 +2,8 @@ import React from 'react';
 import { Formik, Field, Form, FormikProps, ErrorMessage } from 'formik';
 import {namesSchema} from '../schemas'
 import FormFields from "../fields/FormFields";
-import { Button, FormControl, InputLabel, FormHelperText } from '@material-ui/core';
-import Select from '@material-ui/core/Select';
-import Checkbox from '@material-ui/core/Checkbox';
+import { Button } from '@material-ui/core';
 import SelectFields from '../fields/SelectField';
-import {TextField} from '@material-ui/core'
 
 
 
@@ -23,9 +20,6 @@ export const Names: React.FC<any>  = ({submit, setData, data}) => {
         setData({...values, ...data})
       }}
     > 
-
-    {(formik: FormikProps<any>)=> (
-
             <Form>
 
             <SelectFields name="title " label="Title" options = {["Mr.", "Ms.", "Dr.", "Engr"]} /> <br />
@@ -39,9 +33,6 @@ export const Names: React.FC<any>  = ({submit, setData, data}) => {
             <Button type="submit" variant="contained" color="primary">Next</Button>
   
         </Form>
-    )}
-
-
       </Formik>
       <br />
       <br />
